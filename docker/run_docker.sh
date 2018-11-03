@@ -1,6 +1,6 @@
 #! /bin/bash
-docker build -t {{package}} .
-docker stop {{package}}
-docker rm {{package}}
-docker run -v $(pwd):/{{package}} --name {[package}} -dt {{package}} bash
-docker exec -it {{package}} bash
+docker build -t video-motion .
+docker stop video-motion
+docker rm video-motion
+docker run -v $(pwd):/video-motion --name {[package}} -dt video-motion bash
+docker exec -it video-motion bash

@@ -1,23 +1,20 @@
-FROM alpine
+# Thanks to https://github.com/nuveo/docker-opencv
+FROM jjanzic/docker-python3-opencv
 
-LABEL author="{{author}}"
-LABEL email="{{email}}"
+LABEL author="Chris Lee"
+LABEL email="sihrc.c.lee@gmail.com"
+
+ENV PATH=/video-motion/bin:${PATH} PYTHONPATH=/usr/local/lib/python3.6/site-packages:${PYTHONPATH}
 
 COPY requirements.txt /requirements.txt
-RUN apk update && \
-    apk add --no-cache build-base \
-    python3-dev \
-    python3 \
-    bash && \
-    python3 -m ensurepip && \
-    if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
-    if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
+
+RUN apt-get update && \
     pip3 install --upgrade pip wheel && \
-    rm -r /root/.cache && \
     pip3 install -r requirements.txt
 
-COPY . /{{package}}
-WORKDIR {{package}}
+
+COPY . /video-motion
+WORKDIR /video-motion
 
 RUN python3 setup.py develop
 

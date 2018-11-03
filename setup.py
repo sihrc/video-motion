@@ -3,11 +3,11 @@ import os
 from setuptools import setup, find_packages
 
 setup(
-    name='{{package}}',
+    name='video-motion',
     version='0.1',
-    description='{{description}}',
-    author='{{author}}',
-    author_email='{{email}}',
+    description='capture video on motion',
+    author='Chris Lee',
+    author_email='sihrc.c.lee@gmail.com',
     packages=find_packages(),
     install_requires=open(
         os.path.join(

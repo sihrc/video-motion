@@ -1,8 +1,8 @@
-# {{package}}
-{{description}}
+# video-motion
+capture video on motion
 
 Built on: Python3 and Docker (alpine)<br>
-Maintained by: {{author}} [{{email}}]
+Maintained by: Chris Lee [sihrc.c.lee@gmail.com]
 
 ## Getting Started
 - Additional Python3 dependencies can be added to requirements.txt<br>

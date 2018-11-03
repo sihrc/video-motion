@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  video-motion:
+    build: .
+    tty: true
+    entrypoint: ["bash"]
+    volumes:
+      - .:/video-motion
+    devices:
+      - /dev/video0:/dev/video0
